@@ -8,13 +8,25 @@
 
 
 
-This repository provides a full pipeline for:
+---
 
-1. **Counting football juggles** in a video using YOLOv8 and MediaPipe  
-2. **Extracting 3D body landmarks** per frame into a NumPy array  
-3. **Fitting a parametric SMPL-X model** to those 3D landmarks (pose & shape) via SMPLify-X  
-4. **Exporting a frame-by-frame OBJ sequence** ready for rendering or real-time playback  
-5. **Import helpers** for Unity and Blender to visualize the reconstructed motion
+## 🔍 Overview
+
+1. **Detect & Count Juggles**  
+   - Uses YOLOv8 + MediaPipe to count total juggles, attempts, average, best/worst, and preferred foot.  
+2. **Extract 3D Landmarks**  
+   - Runs MediaPipe Pose to capture 33 body landmarks per frame → saved as `landmarks3d.npy`.  
+3. **Fit SMPL-X (SMPLify-X)**  
+   - Optimizes SMPL-X pose & shape to match each frame’s 3D landmarks, exports per-frame OBJ meshes.  
+4. **Visualize in Unity & Blender**  
+   - Unity C# helper to load OBJ sequence as real-time animation.  
+   - Blender import script for high-quality offline render.
+
+---
+
+
+
+
 
 
 
